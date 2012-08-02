@@ -19,6 +19,13 @@ module SpreeSunspotSearch
       Dir.glob(File.join(File.dirname(__FILE__), "../app/**/*_decorator*.rb")) do |c|
         Rails.configuration.cache_classes ? require(c) : load(c)
       end
+
+      # this allows us to develop the search class without restarting the app on each change
+      # I think in dev mode the engine's to_prepare block is called on each request
+
+      if Rails.env.development?
+        Spree::Config.searcher_class = Spree::Search::SpreeSunspot::Search
+      end
     end
 
     config.to_prepare &method(:activate).to_proc
