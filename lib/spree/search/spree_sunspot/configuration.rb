@@ -12,7 +12,7 @@ module Spree
 
         def initialize
           # Price ranges to be used for faceting
-          #   gets turned into a Range object for searching (MUST specify with a dash!!!)
+          #   gets turned into a Range object for searching (MUST specify with a dash)
           self.price_ranges = ["0-25", "25-50", "50-100", "100-150"]
 
           # Product Options for use with Faceting
@@ -34,9 +34,8 @@ module Spree
           # custom facets defined as methods directly on Spree::Product
           self.other_facets = []
 
-          # facets that have already been created and should be displayed
-          # in the suggestions partial
-          self.show_facets = [:taxon_name]
+          # facets that have already been created and should be displayed in the suggestions partial
+          self.show_facets = []
 
           self.sort_fields = {
             :score => :desc,

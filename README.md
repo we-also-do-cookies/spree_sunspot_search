@@ -1,9 +1,9 @@
 SpreeSunspotSearch
 ==================
 
-Adds Solr search to Spree using [Sunspot](https://github.com/sunspot/sunspot). This is a moving targer and is very beta and should be treated as such.
+Adds Solr search to Spree using [Sunspot](https://github.com/sunspot/sunspot).
 
-This is compatible with Spree 1.1. Untested on 1.0, but will probably work without too much modification
+This is compatible with Spree 1.1.x. Untested on 1.0, but will probably work without too much modification
 
 
 Install
@@ -26,7 +26,7 @@ Install the solr.yml file from Sunspot.
 
 `rails g sunspot_rails:install`
 
-Copy the initializer and add `solr_sort_by` to `all.js`
+Copy the initializer and add `solr_sort_by` to `all.js`. This makes the sort drop down function.
 
 `rails g spree_sunspot_search:install`
 
@@ -44,15 +44,9 @@ Build the index for the first time
 Customise the Facets Shown
 --------------------------
 
-Edit the initializer and specify you Product Properties, Product Options, and Price Ranges as an array.
-The initializer should provide enough examples to get you started.
-
-Testing
-=======
+Edit the initializer created by the installation script. The initializer template should provide enough examples to get you started.
 
 TODO
-
-TODOs
 =====
 
 * Add an automatic MAX value for price facets (e.g. Above <max_said_value>)
